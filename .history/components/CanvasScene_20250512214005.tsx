@@ -5,6 +5,7 @@ import {
   OrbitControls, 
   PerspectiveCamera, 
   ContactShadows, 
+  Grid, 
   Center,
   useGLTF,
   Loader,
@@ -133,13 +134,6 @@ export function CanvasScene() {
             <div className="w-12 h-12 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
             <p className="mt-3 text-gray-700">Loading 3D model...</p>
           </div>
-        </div>
-      )}
-
-      {/* Show model loaded status for debugging */}
-      {modelLoaded && !modelError && (
-        <div className="absolute top-2 left-2 px-2 py-1 bg-green-500 text-white text-xs rounded z-10 opacity-75">
-          Model loaded successfully
         </div>
       )}
 

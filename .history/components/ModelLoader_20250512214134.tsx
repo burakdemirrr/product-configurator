@@ -52,7 +52,7 @@ export function ModelLoader({ modelPath, onSuccess, onError }: ModelLoaderProps)
     
     return () => {
       // Cancel loader if component unmounts
-      // No need to dispose GLTFLoader as it doesn't have a dispose method
+      loader.dispose();
     };
   }, [modelPath, onSuccess, onError]);
   

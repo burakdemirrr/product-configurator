@@ -38,7 +38,7 @@ export function FallbackView() {
           3D Viewer Not Available
         </h2>
         <p className="mb-4 text-gray-300">
-          We&apos;re showing this simplified view because the 3D model couldn&apos;t be loaded.
+          We're showing this simplified view because the 3D model couldn't be loaded.
         </p>
         <p className="text-sm text-gray-500 mb-6">
           Try a different browser or device with WebGL support.

@@ -40,15 +40,14 @@ function ErrorBoundary({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-ErrorBoundary.displayName = 'ErrorBoundary';
 
 // Dynamically import 3D components with loading fallbacks
 const CanvasScene = dynamic(
   () => import('../components/CanvasScene').then(mod => mod.CanvasScene)
     .catch(err => {
       console.error("Failed to load CanvasScene:", err);
-      // Return a simple fallback component with display name
-      const CanvasErrorComponent = () => (
+      // Return a simple fallback component
+      return () => (
         <div className="w-full h-full flex items-center justify-center">
           <div className="text-center p-4">
             <h2 className="text-xl font-bold text-red-600">Failed to load 3D viewer</h2>
@@ -56,8 +55,6 @@ const CanvasScene = dynamic(
           </div>
         </div>
       );
-      CanvasErrorComponent.displayName = 'CanvasErrorComponent';
-      return CanvasErrorComponent;
     }),
   { 
     ssr: false,

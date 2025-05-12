@@ -136,13 +136,6 @@ export function CanvasScene() {
         </div>
       )}
 
-      {/* Show model loaded status for debugging */}
-      {modelLoaded && !modelError && (
-        <div className="absolute top-2 left-2 px-2 py-1 bg-green-500 text-white text-xs rounded z-10 opacity-75">
-          Model loaded successfully
-        </div>
-      )}
-
       <Canvas
         ref={canvasRef}
         shadows
